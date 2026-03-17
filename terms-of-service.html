@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Elementalist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #010409;
+            --border: rgba(0, 229, 255, .15);
+            --accent: #00e5ff;
+            --text: #e6f1ff;
+            --dim: #8892b0;
+            --r: 12px
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            min-height: 100vh
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 40% at 20% 20%, rgba(0, 229, 255, .04) 0%, transparent 70%), radial-gradient(ellipse 50% 60% at 80% 80%, rgba(124, 58, 237, .04) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0
+        }
+
+        /* Dil geçişleri için modern ve hatasız CSS yöntemi */
+        body.lang-en .tr {
+            display: none !important;
+        }
+
+        body.lang-tr .en {
+            display: none !important;
+        }
+
+        .lang-bar {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 100;
+            display: flex;
+            gap: 6px
+        }
+
+        .lb {
+            font-family: 'Orbitron', monospace;
+            font-size: .58rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 229, 255, .25);
+            background: rgba(13, 31, 45, .9);
+            color: var(--dim);
+            cursor: pointer;
+            transition: all .2s;
+            backdrop-filter: blur(8px)
+        }
+
+        .lb:hover {
+            border-color: rgba(0, 229, 255, .5);
+            color: var(--text)
+        }
+
+        .lb.on {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(0, 229, 255, .08)
+        }
+
+        .wrap {
+            position: relative;
+            z-index: 1;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 48px 24px 80px
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border: 1.5px solid rgba(0, 229, 255, .35);
+            border-radius: 12px;
+            margin-bottom: 16px
+        }
+
+        .logo svg {
+            width: 28px;
+            height: 28px
+        }
+
+        h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 6px
+        }
+
+        .dsub {
+            font-family: 'Orbitron', monospace;
+            font-size: .65rem;
+            letter-spacing: 4px;
+            color: var(--dim);
+            text-transform: uppercase
+        }
+
+        .meta {
+            margin-top: 14px;
+            font-size: .82rem;
+            color: var(--dim)
+        }
+
+        .brand {
+            color: rgba(0, 229, 255, .7);
+            font-weight: 700
+        }
+
+        section {
+            background: rgba(13, 31, 45, .6);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 28px;
+            margin-bottom: 16px
+        }
+
+        h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 229, 255, .1)
+        }
+
+        p {
+            color: var(--dim);
+            font-size: .95rem;
+            margin-bottom: 10px
+        }
+
+        p:last-child {
+            margin-bottom: 0
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 10px
+        }
+
+        li {
+            color: var(--dim);
+            font-size: .95rem;
+            padding: 5px 0 5px 18px;
+            position: relative
+        }
+
+        li::before {
+            content: "\203A";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 229, 255, .3);
+            transition: border-color .2s
+        }
+
+        a:hover {
+            border-color: var(--accent)
+        }
+
+        strong {
+            color: var(--text);
+            font-weight: 700
+        }
+
+        .box {
+            background: rgba(0, 229, 255, .05);
+            border: 1px solid rgba(0, 229, 255, .2);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 12px 0
+        }
+
+        .box p {
+            margin: 0
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border)
+        }
+
+        footer p {
+            font-size: .8rem;
+            color: var(--dim)
+        }
+
+        .fnav {
+            margin-top: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap
+        }
+
+        .fnav a {
+            font-family: 'Orbitron', monospace;
+            font-size: .6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase
+        }
+    </style>
+</head>
+
+<body class="lang-en">
+    <div class="lang-bar">
+        <button class="lb" id="be" onclick="L('en')">EN</button>
+        <button class="lb" id="bt" onclick="L('tr')">TR</button>
+    </div>
+
+    <div class="wrap">
+
+        <header>
+            <div class="logo">
+                <svg viewBox="0 0 60 60" fill="none">
+                    <polygon points="30,4 55,17.5 55,42.5 30,56 5,42.5 5,17.5" fill="none" stroke="#00e5ff"
+                        stroke-width="2" opacity=".7" />
+                    <polygon points="30,12 47,21.5 47,38.5 30,48 13,38.5 13,21.5" fill="none" stroke="#00e5ff"
+                        stroke-width="1.5" opacity=".45" />
+                    <circle cx="30" cy="30" r="7" fill="#00e5ff" opacity=".9" />
+                    <circle cx="30" cy="30" r="3.5" fill="white" />
+                </svg>
+            </div>
+            <h1>Elementalist</h1>
+            <div class="dsub en">Terms of Service</div>
+            <div class="dsub tr">Kullanım Koşulları</div>
+            <p class="meta"><span class="brand">Hexlume Games</span>
+                <span class="en"> &middot; Effective: March 16, 2026 &middot; v1.0.0</span>
+                <span class="tr"> &middot; Yürürlük: 16 Mart 2026 &middot; v1.0.0</span>
+            </p>
+        </header>
+
+        <section>
+            <h2 class="en">1. Acceptance of Terms</h2>
+            <h2 class="tr">1. Koşulların Kabulü</h2>
+            <p class="en">These Terms of Service govern your use of Elementalist, developed and published by Hexlume
+                Games. By downloading, installing, or playing Elementalist, you agree to be bound by these Terms.</p>
+            <p class="tr">Bu Kullanım Koşulları, Hexlume Games tarafından geliştirilen Elementalist uygulamasının
+                kullanımını yönetmektedir. Elementalist'i indirerek, yükleyerek veya oynayarak bu Koşullara bağlanmayı
+                kabul etmiş olursunuz.</p>
+            <p class="en">If you do not agree to these Terms, do not install or use the Game.</p>
+            <p class="tr">Bu Koşulları kabul etmiyorsanız Oyunu yükleyip kullanmayınız.</p>
+        </section>
+
+        <section>
+            <h2 class="en">2. License to Use</h2>
+            <h2 class="tr">2. Kullanım Lisansı</h2>
+            <p class="en">Hexlume Games grants you a limited, non-exclusive, non-transferable, revocable license to
+                download and play Elementalist solely for your personal, non-commercial entertainment purposes.</p>
+            <p class="tr">Hexlume Games, Elementalist'i yalnızca kişisel, ticari olmayan eğlence amaçlarınızla
+                indirmeniz ve oynamanız için sınırlı, münhasır olmayan, devredilemez ve geri alınabilir bir lisans
+                vermektedir.</p>
+            <p class="en">This license does not include the right to:</p>
+            <p class="tr">Bu lisans aşağıdaki hakları içermemektedir:</p>
+            <ul>
+                <li class="en">Copy, modify, or distribute the Game or its content</li>
+                <li class="tr">Oyunu veya içeriğini kopyalamak, değiştirmek veya dağıtmak</li>
+                <li class="en">Reverse engineer, decompile, or disassemble the Game</li>
+                <li class="tr">Oyunu tersine mühendislikle çözmek veya parçalara ayırmak</li>
+                <li class="en">Create derivative works based on the Game</li>
+                <li class="tr">Oyuna dayalı türev çalışmalar oluşturmak</li>
+                <li class="en">Use the Game for commercial purposes without written permission</li>
+                <li class="tr">Oyunu yazılı izin olmaksızın ticari amaçlarla kullanmak</li>
+                <li class="en">Remove or alter any copyright or proprietary notices</li>
+                <li class="tr">Telif hakkı veya mülkiyet bildirimlerini kaldırmak ya da değiştirmek</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="en">3. Intellectual Property</h2>
+            <h2 class="tr">3. Fikri Mülkiyet</h2>
+            <p class="en">All content within Elementalist including the game engine, artwork, SVG graphics, sound
+                design, level configurations, element names, animations, and the Hexlume Games name and logo is the
+                exclusive property of Hexlume Games and is protected by applicable intellectual property laws.</p>
+            <p class="tr">Elementalist içindeki tüm içerikler; oyun motoru, grafikler, SVG görseller, ses tasarımı,
+                bölüm yapılandırmaları, element adları, animasyonlar ve Hexlume Games adı ile logosu dahil Hexlume
+                Games'in münhasır mülkiyetindedir ve fikri mülkiyet yasalarıyla korunmaktadır.</p>
+            <p class="en">The procedural audio is synthesised entirely via the Web Audio API. No third-party audio
+                samples or licensed music are used.</p>
+            <p class="tr">Oyundaki tüm sesler Web Audio API aracılığıyla tamamen prosedürel olarak üretilmektedir.
+                Üçüncü taraf ses örnekleri veya lisanslı müzik kullanılmamaktadır.</p>
+        </section>
+
+        <section>
+            <h2 class="en">4. User Conduct</h2>
+            <h2 class="tr">4. Kullanıcı Davranışı</h2>
+            <p class="en">You agree not to:</p>
+            <p class="tr">Aşağıdakileri yapmamayı kabul edersiniz:</p>
+            <ul>
+                <li class="en">Use cheats, exploits, automation software, or unauthorised third-party tools</li>
+                <li class="tr">Hile, açık, otomasyon yazılımı veya yetkisiz üçüncü taraf araçları kullanmak</li>
+                <li class="en">Attempt to gain unauthorised access to any part of the Game</li>
+                <li class="tr">Oyunun herhangi bir bölümüne yetkisiz erişim sağlamaya çalışmak</li>
+                <li class="en">Interfere with the proper functioning of the Game</li>
+                <li class="tr">Oyunun düzgün çalışmasına müdahale etmek</li>
+                <li class="en">Use the Game in any manner that violates applicable laws</li>
+                <li class="tr">Oyunu yürürlükteki yasaları ihlal edecek şekilde kullanmak</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="en">5. Advertisements</h2>
+            <h2 class="tr">5. Reklamlar</h2>
+            <p class="en">Elementalist is free to play and is supported by advertisements served by Google AdMob
+                (Publisher ID: pub-8007909982266663). By using the Game you acknowledge that advertisements may be
+                displayed during gameplay.</p>
+            <p class="tr">Elementalist ücretsiz olup Google AdMob (Yayıncı ID: pub-8007909982266663) reklamlarıyla
+                desteklenmektedir. Oyunu kullanarak oynanış sırasında reklam gösterilebileceğini kabul etmiş olursunuz.
+            </p>
+            <p class="en">Hexlume Games is not responsible for the content of third-party advertisements. You may opt
+                out of personalised ads - see our <a href="./privacy-policy.html">Privacy Policy</a> for details.</p>
+            <p class="tr">Hexlume Games üçüncü taraf reklamlarının içeriğinden sorumlu değildir. Kişiselleştirilmiş
+                reklamlardan çıkabilirsiniz - ayrıntılar için <a href="./privacy-policy.html">Gizlilik Politikamıza</a>
+                bakın.</p>
+        </section>
+
+        <section>
+            <h2 class="en">6. Game Progress and Data</h2>
+            <h2 class="tr">6. Oyun İlerlemesi ve Veriler</h2>
+            <p class="en">Your game progress is stored locally on your device. Hexlume Games does not back up, sync, or
+                restore this data.</p>
+            <p class="tr">Oyun ilerlemeniz cihazınızda yerel olarak saklanır. Hexlume Games bu verileri yedeklemez,
+                senkronize etmez veya geri yüklemez.</p>
+            <div class="box">
+                <p class="en">Uninstalling the Game or clearing app data will permanently delete all locally stored
+                    progress. Hexlume Games cannot recover lost progress data.</p>
+                <p class="tr">Oyunu kaldırmak veya uygulama verilerini temizlemek yerel olarak saklanan tüm ilerlemeyi
+                    kalıcı olarak siler. Hexlume Games kaybolan ilerleme verilerini kurtaramaz.</p>
+            </div>
+            <p class="en">localStorage keys used: <strong>ef4</strong> (progress), <strong>ef4_snd</strong> (sound
+                preference).</p>
+            <p class="tr">Kullanılan localStorage anahtarları: <strong>ef4</strong> (ilerleme), <strong>ef4_snd</strong>
+                (ses tercihi).</p>
+        </section>
+
+        <section>
+            <h2 class="en">7. Disclaimer of Warranties</h2>
+            <h2 class="tr">7. Garanti Reddi</h2>
+            <p class="en">Elementalist is provided "as is" and "as available" without warranties of any kind, either
+                express or implied, including but not limited to implied warranties of merchantability, fitness for a
+                particular purpose, or non-infringement.</p>
+            <p class="tr">Elementalist herhangi bir garanti olmaksızın "olduğu gibi" sunulmaktadır. Ticari elverişlilik,
+                belirli bir amaca uygunluk veya ihlal etmeme zımni garantileri dahil ancak bunlarla sınırlı değildir.
+            </p>
+            <p class="en">Hexlume Games does not warrant that the Game will be uninterrupted, error-free, or free of
+                viruses or other harmful components.</p>
+            <p class="tr">Hexlume Games, Oyunun kesintisiz, hatasız veya zararlı bileşenlere karşı korunmalı olacağını
+                garanti etmez.</p>
+        </section>
+
+        <section>
+            <h2 class="en">8. Limitation of Liability</h2>
+            <h2 class="tr">8. Sorumluluk Sınırlaması</h2>
+            <p class="en">To the fullest extent permitted by applicable law, Hexlume Games shall not be liable for any
+                indirect, incidental, special, consequential, or punitive damages arising from your use of or inability
+                to use the Game.</p>
+            <p class="tr">Yürürlükteki yasaların izin verdiği azami ölçüde Hexlume Games, Oyunu kullanımınızdan veya
+                kullanamamanızdan kaynaklanan dolaylı, tesadüfi, özel veya cezai nitelikteki zararlardan sorumlu
+                tutulamaz.</p>
+        </section>
+
+        <section>
+            <h2 class="en">9. Termination</h2>
+            <h2 class="tr">9. Fesih</h2>
+            <p class="en">Hexlume Games reserves the right to discontinue the Game or modify these Terms at any time.
+                Your license terminates automatically if you violate any provision of these Terms.</p>
+            <p class="tr">Hexlume Games, Oyunu istediği zaman sonlandırma veya bu Koşulları değiştirme hakkını saklı
+                tutar. Bu Koşulları ihlal etmeniz halinde lisansınız otomatik olarak sona erer.</p>
+        </section>
+
+        <section>
+            <h2 class="en">10. Changes to These Terms</h2>
+            <h2 class="tr">10. Koşul Değişiklikleri</h2>
+            <p class="en">We may revise these Terms at any time. Updated Terms will be posted on this page with a
+                revised effective date. Continued use after changes constitutes your acceptance of the updated Terms.
+            </p>
+            <p class="tr">Bu Koşulları istediğimiz zaman revize edebiliriz. Güncellenmiş Koşullar bu sayfada yayımlanır.
+                Değişikliklerin ardından kullanımı sürdürmeniz güncellenmiş Koşulları kabul ettiğiniz anlamına gelir.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="en">11. Governing Law</h2>
+            <h2 class="tr">11. Geçerli Hukuk</h2>
+            <p class="en">These Terms shall be governed by and construed in accordance with the laws of the Republic of
+                Turkey. Any disputes shall be subject to the exclusive jurisdiction of the courts of Turkey.</p>
+            <p class="tr">Bu Koşullar Türkiye Cumhuriyeti hukukuna göre yönetilir ve yorumlanır. Bu Koşullardan doğan
+                anlaşmazlıklar Türkiye mahkemelerinin münhasır yargı yetkisine tabidir.</p>
+        </section>
+
+        <section>
+            <h2 class="en">12. Contact</h2>
+            <h2 class="tr">12. İletişim</h2>
+            <p class="en">If you have questions about these Terms please contact us:</p>
+            <p class="tr">Bu Koşullar hakkında sorularınız için lütfen iletişime geçin:</p>
+            <ul>
+                <li class="en"><strong>Developer:</strong> Hexlume Games</li>
+                <li class="tr"><strong>Geliştirici:</strong> Hexlume Games</li>
+                <li><strong>E-mail:</strong> <a href="mailto:hexlume.games@gmail.com">hexlume.games@gmail.com</a></li>
+                <li><strong>App:</strong> Elementalist (com.hexlumegames.elementalist)</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p class="en">&copy; 2026 Hexlume Games. All rights reserved.</p>
+            <p class="tr">&copy; 2026 Hexlume Games. Tüm hakları saklıdır.</p>
+            <nav class="fnav">
+                <a href="./privacy-policy.html" class="en">Privacy Policy</a>
+                <a href="./privacy-policy.html" class="tr">Gizlilik Politikası</a>
+                <a href="./terms-of-service.html" class="en">Terms of Service</a>
+                <a href="./terms-of-service.html" class="tr">Kullanım Koşulları</a>
+            </nav>
+        </footer>
+
+    </div>
+
+    <script>
+        // Çok daha performanslı ve hatasız dil değiştirme fonksiyonu
+        function L(lang) {
+            document.body.className = 'lang-' + lang;
+            document.getElementById('be').className = 'lb' + (lang === 'en' ? ' on' : '');
+            document.getElementById('bt').className = 'lb' + (lang === 'tr' ? ' on' : '');
+            document.documentElement.lang = lang;
+            try { localStorage.setItem('hg_lang', lang); } catch (e) { }
+        }
+
+        (function () {
+            var lang = 'en';
+            try {
+                var s = localStorage.getItem('hg_lang');
+                if (s === 'en' || s === 'tr') lang = s;
+            } catch (e) { }
+
+            if (lang === 'en') {
+                var sys = (navigator.language || 'en').substring(0, 2);
+                if (sys === 'tr') lang = 'tr';
+            }
+            L(lang);
+        })();
+    </script>
+
+</body>
+
+</html>
