@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Elementalist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #010409;
+            --border: rgba(0, 229, 255, .15);
+            --accent: #00e5ff;
+            --text: #e6f1ff;
+            --dim: #8892b0;
+            --r: 12px
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            min-height: 100vh
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 40% at 20% 20%, rgba(0, 229, 255, .04) 0%, transparent 70%), radial-gradient(ellipse 50% 60% at 80% 80%, rgba(124, 58, 237, .04) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0
+        }
+
+        .lang-bar {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 100;
+            display: flex;
+            gap: 6px
+        }
+
+        .lb {
+            font-family: 'Orbitron', monospace;
+            font-size: .58rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 229, 255, .25);
+            background: rgba(13, 31, 45, .9);
+            color: var(--dim);
+            cursor: pointer;
+            transition: all .2s;
+            backdrop-filter: blur(8px)
+        }
+
+        .lb:hover {
+            border-color: rgba(0, 229, 255, .5);
+            color: var(--text)
+        }
+
+        .lb.on {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(0, 229, 255, .08)
+        }
+
+        .wrap {
+            position: relative;
+            z-index: 1;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 48px 24px 80px
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border: 1.5px solid rgba(0, 229, 255, .35);
+            border-radius: 12px;
+            margin-bottom: 16px
+        }
+
+        .logo svg {
+            width: 28px;
+            height: 28px
+        }
+
+        h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 6px
+        }
+
+        .dsub {
+            font-family: 'Orbitron', monospace;
+            font-size: .65rem;
+            letter-spacing: 4px;
+            color: var(--dim);
+            text-transform: uppercase
+        }
+
+        .meta {
+            margin-top: 14px;
+            font-size: .82rem;
+            color: var(--dim)
+        }
+
+        .brand {
+            color: rgba(0, 229, 255, .7);
+            font-weight: 700
+        }
+
+        section {
+            background: rgba(13, 31, 45, .6);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 28px;
+            margin-bottom: 16px
+        }
+
+        h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 229, 255, .1)
+        }
+
+        p {
+            color: var(--dim);
+            font-size: .95rem;
+            margin-bottom: 10px
+        }
+
+        p:last-child {
+            margin-bottom: 0
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 10px
+        }
+
+        li {
+            color: var(--dim);
+            font-size: .95rem;
+            padding: 5px 0 5px 18px;
+            position: relative
+        }
+
+        li::before {
+            content: "\203A";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 229, 255, .3);
+            transition: border-color .2s
+        }
+
+        a:hover {
+            border-color: var(--accent)
+        }
+
+        strong {
+            color: var(--text);
+            font-weight: 700
+        }
+
+        .box {
+            background: rgba(0, 229, 255, .05);
+            border: 1px solid rgba(0, 229, 255, .2);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 12px 0
+        }
+
+        .box p {
+            margin: 0
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border)
+        }
+
+        footer p {
+            font-size: .8rem;
+            color: var(--dim)
+        }
+
+        .fnav {
+            margin-top: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap
+        }
+
+        .fnav a {
+            font-family: 'Orbitron', monospace;
+            font-size: .6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase
+        }
+
+        /* Language toggle logic via CSS */
+        html[lang="en"] .tr {
+            display: none !important;
+        }
+
+        html[lang="tr"] .en {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="lang-bar">
+        <button class="lb" id="be" onclick="setLanguage('en')">EN</button>
+        <button class="lb" id="bt" onclick="setLanguage('tr')">TR</button>
+    </div>
+
+    <div class="wrap">
+
+        <header>
+            <div class="logo">
+                <svg viewBox="0 0 60 60" fill="none">
+                    <polygon points="30,4 55,17.5 55,42.5 30,56 5,42.5 5,17.5" fill="none" stroke="#00e5ff"
+                        stroke-width="2" opacity=".7" />
+                    <polygon points="30,12 47,21.5 47,38.5 30,48 13,38.5 13,21.5" fill="none" stroke="#00e5ff"
+                        stroke-width="1.5" opacity=".45" />
+                    <circle cx="30" cy="30" r="7" fill="#00e5ff" opacity=".9" />
+                    <circle cx="30" cy="30" r="3.5" fill="white" />
+                </svg>
+            </div>
+            <h1>Elementalist</h1>
+            <div class="dsub en">Privacy Policy</div>
+            <div class="dsub tr">Gizlilik Politikası</div>
+            <p class="meta"><span class="brand">Hexlume Games</span>
+                <span class="en"> &middot; Effective: March 16, 2026 &middot; v1.0.0</span>
+                <span class="tr"> &middot; Yürürlük: 16 Mart 2026 &middot; v1.0.0</span>
+            </p>
+        </header>
+
+        <section>
+            <h2 class="en">1. Overview</h2>
+            <h2 class="tr">1. Genel Bakış</h2>
+            <p class="en">Hexlume Games built Elementalist as a free-to-play mobile game. This Privacy Policy explains
+                what information is collected, how it is used, and the choices available to you.</p>
+            <p class="tr">Hexlume Games tarafından geliştirilen Elementalist ücretsiz bir mobil oyundur. Bu Gizlilik
+                Politikası hangi bilgilerin toplandığını, nasıl kullanıldığını ve kullanıcının sahip olduğu seçenekleri
+                açıklamaktadır.</p>
+            <p class="en">By installing or playing Elementalist you agree to the practices described in this policy. If
+                you do not agree, please discontinue use of the application.</p>
+            <p class="tr">Elementalist'i yükleyerek veya oynayarak bu politikada açıklanan uygulamaları kabul etmiş
+                olursunuz. Katılmıyorsanız lütfen uygulamayı kullanmayı bırakın.</p>
+        </section>
+
+        <section>
+            <h2 class="en">2. Information We Collect</h2>
+            <h2 class="tr">2. Topladığımız Bilgiler</h2>
+            <p class="en"><strong>Directly provided information</strong></p>
+            <p class="tr"><strong>Doğrudan sağlanan bilgiler</strong></p>
+            <p class="en">Elementalist does not require account registration and does not ask for personal information
+                such as name, email address, or phone number.</p>
+            <p class="tr">Elementalist hesap kaydı gerektirmez; ad, e-posta veya telefon numarası gibi kişisel bilgi
+                talep etmez.</p>
+            <p class="en"><strong>Information stored on your device</strong></p>
+            <p class="tr"><strong>Cihazda saklanan bilgiler</strong></p>
+            <p class="en">The game saves the following data locally using the browser localStorage API. This data never
+                leaves your device:</p>
+            <p class="tr">Oyun aşağıdaki verileri yalnızca cihazınızda localStorage API aracılığıyla yerel olarak
+                saklar. Bu veriler cihazınızdan çıkmaz:</p>
+            <ul>
+                <li class="en"><strong>ef4</strong> - game progress (high score, highest level reached, per-level star
+                    ratings, unlocked levels count)
+                </li>
+                <li class="tr"><strong>ef4</strong> - oyun ilerlemesi (en yüksek skor, ulaşılan en yüksek bölüm, bölüm
+                    başına yıldız derecelendirmesi, kilidi açılmış bölüm sayısı)</li>
+                <li class="en"><strong>ef4_snd</strong> - sound on/off preference</li>
+                <li class="tr"><strong>ef4_snd</strong> - ses açık/kapalı tercihi</li>
+                <li class="en"><strong>hg_lang</strong> - language preference for legal pages</li>
+                <li class="tr"><strong>hg_lang</strong> - yasal sayfalar için dil tercihi</li>
+            </ul>
+            <p class="en"><strong>Service Worker and offline cache</strong></p>
+            <p class="tr"><strong>Service Worker ve çevrimdışı önbellek</strong></p>
+            <p class="en">The game registers a Service Worker to enable offline play. The Service Worker caches only
+                static game files (HTML, CSS, JavaScript, icons). It does not cache advertisements, does not read or
+                modify your game progress, and does not transmit any data externally.</p>
+            <p class="tr">Oyun, çevrimdışı oynanabilirliği sağlamak amacıyla bir Service Worker kaydeder. Service
+                Worker yalnızca statik oyun dosyalarını (HTML, CSS, JavaScript, simgeler) önbelleğe alır. Reklamları
+                önbelleğe almaz, oyun ilerleme verilerinizi okumaz veya değiştirmez ve herhangi bir veriyi dışarıya
+                iletmez.</p>
+            <p class="en"><strong>Information collected automatically (AdMob)</strong></p>
+            <p class="tr"><strong>Otomatik toplanan bilgiler (AdMob)</strong></p>
+            <p class="en">We use Google AdMob to serve advertisements. AdMob may collect:</p>
+            <p class="tr">Reklamları sunmak için Google AdMob kullanıyoruz. AdMob aşağıdakileri toplayabilir:</p>
+            <ul>
+                <li class="en">Advertising ID (Android / GAID)</li>
+                <li class="tr">Reklam Kimliği (Android / GAID)</li>
+                <li class="en">IP address and approximate location (country level)</li>
+                <li class="tr">IP adresi ve yaklaşık konum (ülke düzeyi)</li>
+                <li class="en">Device type, OS version, and language</li>
+                <li class="tr">Cihaz türü, işletim sistemi sürümü ve dil</li>
+                <li class="en">Ad interaction data (impressions, clicks)</li>
+                <li class="tr">Reklam etkileşim verileri (gösterimler, tıklamalar)</li>
+            </ul>
+            <div class="box">
+                <p><strong>AdMob Publisher ID:</strong> pub-8007909982266663</p>
+                <p class="en">Data collection governed by <a href="https://policies.google.com/privacy" target="_blank"
+                        rel="noopener">Google Privacy Policy</a>.</p>
+                <p class="tr">Veri toplama <a href="https://policies.google.com/privacy" target="_blank"
+                        rel="noopener">Google Gizlilik Politikası</a> kapsamındadır.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="en">3. How We Use Information</h2>
+            <h2 class="tr">3. Bilgileri Nasıl Kullanıyoruz</h2>
+            <p class="en">We do not collect, store, or process personal data on our own servers. AdMob data is used
+                solely for:</p>
+            <p class="tr">Kendi sunucularımızda kişisel veri toplamıyoruz. AdMob verileri yalnızca şu amaçlarla
+                kullanılır:</p>
+            <ul>
+                <li class="en">Displaying advertisements to support the free availability of the game</li>
+                <li class="tr">Oyunun ücretsiz sunulmasını desteklemek amacıyla reklam gösterimi</li>
+                <li class="en">Measuring ad performance and preventing ad fraud</li>
+                <li class="tr">Reklam performansını ölçmek ve reklam sahteciliğini önlemek</li>
+            </ul>
+            <p class="en">We do not sell, trade, or rent any personal information to third parties.</p>
+            <p class="tr">Kişisel bilgileri üçüncü taraflara satmıyoruz, takas etmiyoruz veya kiralamıyoruz.</p>
+        </section>
+
+        <section>
+            <h2 class="en">4. Advertising and Opt-Out</h2>
+            <h2 class="tr">4. Reklamcılık ve Çıkış</h2>
+            <p class="en">Elementalist displays the following advertisement types, served by Google AdMob:</p>
+            <p class="tr">Elementalist, Google AdMob tarafından sunulan aşağıdaki reklam türlerini gösterir:</p>
+            <ul>
+                <li class="en"><strong>Banner ads</strong> — displayed at the bottom of the screen during gameplay and
+                    menus.</li>
+                <li class="tr"><strong>Banner reklamlar</strong> — oyun ve menü ekranlarında ekranın altında gösterilir.
+                </li>
+                <li class="en"><strong>Interstitial ads</strong> — full-screen ads shown between levels, starting from
+                    Level 7.</li>
+                <li class="tr"><strong>Geçiş reklamları (Interstitial)</strong> — 7. bölümden itibaren bölümler arasında
+                    tam ekran reklam gösterilir.</li>
+            </ul>
+            <p class="en">You may opt out of personalised advertising at any time:</p>
+            <p class="tr">Kişiselleştirilmiş reklamlardan istediğiniz zaman çıkabilirsiniz:</p>
+            <ul>
+                <li class="en">Android: Settings &rarr; Google &rarr; Ads &rarr; Delete advertising ID</li>
+                <li class="tr">Android: Ayarlar &rarr; Google &rarr; Reklamlar &rarr; Reklam kimliğini sil</li>
+                <li><a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>
+                </li>
+            </ul>
+            <p class="en">The game remains fully playable regardless of your ad preference.</p>
+            <p class="tr">Reklam tercihinizden bağımsız olarak oyun tam olarak oynanabilir.</p>
+        </section>
+
+        <section>
+            <h2 class="en">5. Children Privacy</h2>
+            <h2 class="tr">5. Çocukların Gizliliği</h2>
+            <p class="en">Elementalist is rated for general audiences and does not knowingly collect personal
+                information from children under 13 (or the applicable age in your jurisdiction). AdMob is configured
+                to serve non-personalised ads where required by applicable children's privacy laws. If you believe a
+                child has provided personal information, please contact us immediately.</p>
+            <p class="tr">Elementalist genel kitleye yönelik derecelendirilmiştir ve 13 yaşın altındaki çocuklardan
+                (veya yaşadığınız ülkedeki geçerli yaştan küçük bireylerden) bilerek kişisel bilgi toplamaz. AdMob,
+                geçerli çocuk gizlilik yasalarının gerektirdiği durumlarda kişiselleştirilmemiş reklam sunacak şekilde
+                yapılandırılmıştır. Bir çocuğun kişisel bilgi sağladığına inanıyorsanız lütfen derhal bizimle iletişime
+                geçin.</p>
+        </section>
+
+        <section>
+            <h2 class="en">6. Data Security</h2>
+            <h2 class="tr">6. Veri Güvenliği</h2>
+            <p class="en">All game progress and preference data is stored exclusively on your device and is not
+                transmitted over the network. No passwords or sensitive personal information are collected by Hexlume
+                Games.</p>
+            <p class="tr">Tüm oyun ilerleme ve tercih verileri yalnızca cihazınızda saklanır ve ağ üzerinden iletilmez.
+                Hexlume Games şifre veya hassas kişisel bilgi toplamaz.</p>
+        </section>
+
+        <section>
+            <h2 class="en">7. Data Retention and Deletion</h2>
+            <h2 class="tr">7. Veri Saklama ve Silme</h2>
+            <p class="en">Local game data is stored until you uninstall the app or clear its storage. Hexlume Games
+                cannot access or delete this data remotely.</p>
+            <p class="tr">Yerel oyun verileri, uygulamayı kaldırana veya depolama alanını temizleyene kadar saklanır.
+                Hexlume Games bu verilere uzaktan erişemez veya silemez.</p>
+            <p class="en"><strong>To delete:</strong> Settings &rarr; Apps &rarr; Elementalist &rarr; Storage &rarr;
+                Clear Data</p>
+            <p class="tr"><strong>Silmek için:</strong> Ayarlar &rarr; Uygulamalar &rarr; Elementalist &rarr; Depolama
+                &rarr; Verileri Temizle</p>
+        </section>
+
+        <section>
+            <h2 class="en">8. Third-Party Services</h2>
+            <h2 class="tr">8. Üçüncü Taraf Hizmetler</h2>
+            <p class="en">Elementalist uses the following third-party services, each under its own privacy policy:</p>
+            <p class="tr">Elementalist aşağıdaki üçüncü taraf hizmetleri kullanmaktadır; her biri kendi gizlilik
+                politikası kapsamındadır:</p>
+            <ul>
+                <li class="en"><strong>Google AdMob</strong> - advertising - <a
+                        href="https://policies.google.com/privacy" target="_blank"
+                        rel="noopener">policies.google.com/privacy</a></li>
+                <li class="tr"><strong>Google AdMob</strong> - reklamcılık - <a
+                        href="https://policies.google.com/privacy" target="_blank"
+                        rel="noopener">policies.google.com/privacy</a></li>
+                <li class="en"><strong>Google Fonts</strong> - Orbitron and Rajdhani typefaces - <a
+                        href="https://policies.google.com/privacy" target="_blank"
+                        rel="noopener">policies.google.com/privacy</a></li>
+                <li class="tr"><strong>Google Fonts</strong> - Orbitron ve Rajdhani yazı tipleri - <a
+                        href="https://policies.google.com/privacy" target="_blank"
+                        rel="noopener">policies.google.com/privacy</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="en">9. Your Rights</h2>
+            <h2 class="tr">9. Haklarınız</h2>
+            <p class="en">Depending on your location you may have the right to access, correct, delete, or restrict
+                processing of your personal data. Since Hexlume Games does not store personal data on its own servers,
+                most rights apply to Google services directly via <a href="https://myaccount.google.com" target="_blank"
+                    rel="noopener">myaccount.google.com</a>.</p>
+            <p class="tr">Konumunuza bağlı olarak kişisel verilerinize erişme, düzeltme, silme veya işlenmesini
+                kısıtlama haklarınız olabilir. Hexlume Games kendi sunucularında kişisel veri saklamadığından bu
+                hakların çoğu <a href="https://myaccount.google.com" target="_blank"
+                    rel="noopener">myaccount.google.com</a> üzerinden doğrudan Google servislerine yöneliktir.</p>
+        </section>
+
+        <section>
+            <h2 class="en">10. Policy Changes</h2>
+            <h2 class="tr">10. Politika Değişiklikleri</h2>
+            <p class="en">We may update this Privacy Policy from time to time. Changes will be posted on this page with
+                an updated effective date. Continued use after changes constitutes acceptance.</p>
+            <p class="tr">Bu politikayı zaman zaman güncelleyebiliriz. Değişiklikler güncellenmiş yürürlük tarihiyle bu
+                sayfada yayımlanır. Değişikliklerin ardından kullanımı sürdürmeniz kabul anlamına gelir.</p>
+        </section>
+
+        <section>
+            <h2 class="en">11. Contact</h2>
+            <h2 class="tr">11. İletişim</h2>
+            <p class="en">If you have questions about this Privacy Policy please contact us:</p>
+            <p class="tr">Bu Gizlilik Politikası hakkında sorularınız için lütfen iletişime geçin:</p>
+            <ul>
+                <li class="en"><strong>Developer:</strong> Hexlume Games</li>
+                <li class="tr"><strong>Geliştirici:</strong> Hexlume Games</li>
+                <li><strong>E-mail:</strong> <a href="mailto:hexlume.games@gmail.com">hexlume.games@gmail.com</a></li>
+                <li><strong>App:</strong> Elementalist (com.hexlumegames.elementalist)</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p class="en">&copy; 2026 Hexlume Games. All rights reserved.</p>
+            <p class="tr">&copy; 2026 Hexlume Games. Tüm hakları saklıdır.</p>
+            <nav class="fnav">
+                <a href="./privacy-policy.html" class="en">Privacy Policy</a>
+                <a href="./privacy-policy.html" class="tr">Gizlilik Politikası</a>
+                <a href="./terms-of-service.html" class="en">Terms of Service</a>
+                <a href="./terms-of-service.html" class="tr">Kullanım Koşulları</a>
+            </nav>
+        </footer>
+
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            // Update the HTML lang attribute (this triggers our CSS display rules)
+            document.documentElement.lang = lang;
+
+            // Update button active states
+            document.getElementById('be').classList.toggle('on', lang === 'en');
+            document.getElementById('bt').classList.toggle('on', lang === 'tr');
+
+            // Save preference
+            try {
+                localStorage.setItem('hg_lang', lang);
+            } catch (e) { }
+        }
+
+        (function initLanguage() {
+            var lang = 'en';
+            try {
+                var savedLang = localStorage.getItem('hg_lang');
+                if (savedLang === 'en' || savedLang === 'tr') {
+                    lang = savedLang;
+                } else {
+                    // Check browser language if no preference is saved
+                    var sysLang = (navigator.language || '').substring(0, 2);
+                    if (sysLang === 'tr') lang = 'tr';
+                }
+            } catch (e) { }
+
+            setLanguage(lang);
+        })();
+    </script>
+
+</body>
+
+</html>
